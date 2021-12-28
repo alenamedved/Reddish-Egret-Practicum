@@ -7,12 +7,12 @@ import 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCwejwRFqWFXt8N91AYCuuwy1jVQUFbMsA",
-  authDomain: "practicum-1ea42.firebaseapp.com",
-  projectId: "practicum-1ea42",
-  storageBucket: "practicum-1ea42.appspot.com", 
-  messagingSenderId: "199308370017",
-  appId: "1:199308370017:web:f5e815e67bc7d3a5e4ca20",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET, 
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
   };
 
 
