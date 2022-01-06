@@ -3,6 +3,9 @@ import Head from "next/head";
 import fire from "../config/fire-config";
 import CreatePost from "../components/CreatePost";
 import Link from "next/link";
+import SearchBar from "../components/jobs/Searchbar";
+import Layout from "../components/jobs/Searchbar";
+
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
@@ -23,7 +26,9 @@ const Home = () => {
       <Head>
         <title>Blog App</title>
       </Head>
-      <h1>Blog</h1>
+    
+     
+      <SearchBar />
       <ul>
         {blogs.map((blog) => (
           <li key={blog.id}>
@@ -34,6 +39,8 @@ const Home = () => {
         ))}
       </ul>
       <CreatePost />
+     <Layout />
+      <h1>Blog</h1>
     </div>
   );
 };
