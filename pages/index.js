@@ -4,31 +4,16 @@ import fire from "../config/fire-config";
 import CreatePost from "../components/CreatePost";
 import Link from "next/link";
 import Layout, { siteTitle } from "../components/Layout";
+import JobCard from "../components/jobs/JobsCard";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    fire
-      .firestore()
-      .collection("blog")
-      .onSnapshot((snap) => {
-        const blogs = snap.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setBlogs(blogs);
-      });
-  }, []);
   
   return (
-    <Layout home>
+ 
+    <>
     
-      {/* <Head>
-        <title>{siteTitle}</title>
-      </Head> */}
-      
-      <hr />
       <h1>Blog</h1>
       <ul>
         {blogs.map((blog) => (
@@ -43,7 +28,8 @@ const Home = () => {
       <Link href={"/mainSections/Resources"} passHref>
         <h3>Legal Help</h3>
       </Link>
-    </Layout>
+    <JobCard />
+   </>
   );
 };
 export default Home;
