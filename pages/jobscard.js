@@ -1,8 +1,6 @@
 import { Grid, Link, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { makeStyles } from '@mui/styles'
-import JobCard from '../components/jobs/JobsCard';
-import Header from '../components/mainPage/Header';
 const useStyles = makeStyles(() => ({
   main: {
     display: "flex",
