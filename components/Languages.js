@@ -1,4 +1,4 @@
-export default [
+const Languages = [
     {"value": "Select a Language"},
     {"value":"English","code":"EN"},
     {"value":"Japanese","code":"JA"},
@@ -73,3 +73,4 @@ export default [
     {"value":"Welsh","code":"CY"},
     {"value":"Xhosa","code":"XH"}
   ];
+  export default Languages
