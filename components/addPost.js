@@ -55,7 +55,7 @@ const CreatePost = ({ currentUser }) => {
           >
             Write your Post
           </Typography>
-          <Typography area-label="window to add new post" variant="div" sx={{ mt: 2 }}>
+          <Typography area-label="window to add new post" variant="subtitle1" sx={{ mt: 2 }}>
             <AddnewPost currentUser={currentUser} handleClose={handleClose} />
           </Typography>
           <Button

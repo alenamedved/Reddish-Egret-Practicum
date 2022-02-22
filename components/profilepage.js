@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import fire from "../config/fire-config";
 import "firebase/firestore";
-import { storage, db } from "../config/fire-config";
+import { storage } from "../config/fire-config";
 import { CountryDropdown } from "react-country-region-selector";
 import Languages from "./Languages";
 import "@firebase/auth";
@@ -18,7 +18,6 @@ const popUp = () => {
 
 export default function ProfilePage({ currentUser, updateUserInfo }) {
   const { authUser } = useAuth();
-  const router = useRouter();
 
   const [user, setUser] = useState(currentUser);
 

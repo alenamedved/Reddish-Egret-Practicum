@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../config/fire-config";
-import { useRouter } from "next/router";
 import { useAuth } from "../components/context/authUserContext";
 
 import Post from "../components/Post";
@@ -84,8 +83,14 @@ function updateDataInDb(docs, collection, dataToUpdate) {
   });
 }
 
+
 const MainBoard = () => {
   const [posts, setPosts] = useState([]);
+  const [filterByName, setFilterByName] = useState({
+    filter: "",
+    filterIsSet: false,
+  });
+
   const [currentUser, setCurrentUser] = useState({
     userName: "",
     country: "",
@@ -98,17 +103,19 @@ const MainBoard = () => {
 
   const { authUser, loading } = useAuth();
 
-  const router = useRouter();
 
-  // Listen for changes on loading and authUser, redirect if needed
-
+  // Listen for changes on loading and authUser
   useEffect(() => {
-/*     if (loading && !authUser) router.push("/"); */
+
     if (authUser) {
       //fetch all posts and subscribe for updates
       db.collection("posts").onSnapshot((docs) => {
         checkForLikedPosts(authUser.uid).then((response) => {
-          setPosts(response);
+          if (filterByName.filter === "") {
+            setPosts(response);
+          } else {
+            filterPostsByName(filterByName);
+          }
         });
       });
       //find current user into collention "users"
@@ -122,7 +129,7 @@ const MainBoard = () => {
           }
         });
     }
-  }, [authUser, loading, router]);
+  }, [authUser, loading, filterByName]);
 
   //callback function is being called when user updates profile
   //it updates currentUser state, and updated userImgUrl pass and userName to each users post or comment
@@ -146,9 +153,27 @@ const MainBoard = () => {
     setCurrentUser(user);
   };
 
+  //add functionality to filter posts by user name when click on username inside the post
+  function filterPostsByName(filterByName) {
+    const filtered = posts.filter(
+      (post) => post.userName === filterByName.filter
+    );
+    setPosts(filtered);
+  }
+  function setFilter(e) {
+    if (!filterByName.filterIsSet) {
+      setFilterByName({
+        filter: e.target.children[0].previousSibling.data,
+        filterIsSet: true,
+      });
+    } else {
+      setFilterByName({
+        filter: "",
+        filterIsSet: false,
+      });
+    }
+  }
 
-console.log(currentUser)
-console.log(authUser)
   return (
     <>
       <CreatePost currentUser={currentUser} />
@@ -159,7 +184,7 @@ console.log(authUser)
         sx={{ padding: "5px" }}
         columns={2}
       >
-      {/* {user ? : } */}
+        {/* {user ? : } */}
         <ProfileCard
           currentUser={currentUser}
           updateUserInfo={updateUserInfo}
@@ -173,6 +198,7 @@ console.log(authUser)
                 post={post}
                 userId={authUser.uid}
                 currentUser={currentUser}
+                setFilter={setFilter}
               />
             ))}
           </Grid>
