@@ -34,7 +34,7 @@ const AddnewPost = ({ currentUser, handleClose }) => {
         }}
         value={input}
         placeholder="what is on your mind"
-        minRows={3}
+        minRows={5}
         row={5}
         maxRows={10}
         onChange={(e) => setInput(e.target.value)}

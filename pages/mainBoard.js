@@ -4,7 +4,7 @@ import { useAuth } from "../components/context/authUserContext";
 
 import Post from "../components/Post";
 import ProfileCard from "../components/ProfileCard";
-import CreatePost from "../components/addPost";
+import CreatePost from "../components/CreatePost";
 
 import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
@@ -68,7 +68,6 @@ async function currentUserPosts(userUid) {
       userPosts.push(post.postId);
     }
   });
-
   return userPosts;
 }
 function updateDataInDb(docs, collection, dataToUpdate) {
@@ -103,6 +102,8 @@ const MainBoard = () => {
   });
 
   const { authUser, loading } = useAuth();
+
+
 
 
   // Listen for changes on loading and authUser
@@ -177,22 +178,24 @@ const MainBoard = () => {
 
   return (
     <>
-      <CreatePost currentUser={currentUser} />
       <Grid
         display="grid"
-        gridTemplateColumns="repeat(2, 1fr)"
+        gridTemplateColumns="2fr 1fr"
+        gridTemplateRows="4rem 1fr"
+        gap={2}
         container
-        sx={{ padding: "5px" }}
+        sx={{ padding: "20px", marginLeft: "5px" }}
         columns={2}
       >
-        {/* {user ? : } */}
         <ProfileCard
           currentUser={currentUser}
           updateUserInfo={updateUserInfo}
         />
 
+        <CreatePost currentUser={currentUser} />
+
         {authUser && posts ? (
-          <Grid gridRow={1}>
+          <Grid gridRow={2}>
             {posts.map((post) => (
               <Post
                 key={post.postId}

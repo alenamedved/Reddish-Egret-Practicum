@@ -31,7 +31,7 @@ function ProfileCard({ currentUser, updateUserInfo }) {
   const { country, hobbies, language, location, userImageUrl, userName } = currentUser;
 
   return (
-    <Grid item xs={2} columns={1} gridColumn="2" mx="auto" my="10px" >
+    <Grid item xs={2} columns={1} gridColumn="2" gridRow={2} mx="auto" my="10px" >
       <Card sx={{ maxWidth: 375 }}>
         <CustomizedDialogs>
           <ProfilePage

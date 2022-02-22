@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { TextField, Button, Modal, Box, Typography } from "@material-ui/core";
 import { db, serverTimestamp } from "../config/fire-config";
-import { useAuth } from "../components/context/authUserContext";
+import { useAuth } from "./context/authUserContext";
 import toast, { Toaster } from "react-hot-toast";
-import { inputAdornmentClasses } from "@mui/material";
-import AddnewPost from "../components/AddnewPost";
+import { inputAdornmentClasses, Grid } from "@mui/material";
+import AddnewPost from "./AddnewPost";
 import { FullscreenExit, ViewColumn } from "@mui/icons-material";
 
 const style = {
@@ -27,10 +27,10 @@ const CreatePost = ({ currentUser }) => {
   const handleClose = () => setOpen(false);
 
   return (
-    <>
+    <Grid item xs gridColumn="1" gridRow="1" >
       <Button
         style={{
-          width: "50%",
+          width: "100%",
           border: "1px solid black",
           padding: 8,
           marginTop: "8px",
@@ -66,7 +66,7 @@ const CreatePost = ({ currentUser }) => {
           </Button>
         </Box>
       </Modal>
-    </>
+    </Grid>
   );
 };
 
