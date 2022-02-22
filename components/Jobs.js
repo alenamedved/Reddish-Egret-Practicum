@@ -54,7 +54,7 @@ const Jobs = () => {
           </Grid>
           <Grid item xs className={classes.items}>
 
-            <p>Government Jobs is the only government sector job board created from the world's for most fully integrated recruitment,
+            <p>Government Jobs is the only government sector job board created from the world&apos;s for most fully integrated recruitment,
               selection and applicant tracking system called NEOGOV Insight designed specifically for public sector employers</p>
 
           </Grid>
