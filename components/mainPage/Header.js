@@ -26,12 +26,13 @@ const Header = () => {
   };
 
   const router = useRouter();
+  //check if mainboard or homepage opened
   const mainboard = router.pathname === "/mainBoard";
 
   const handleClose = () => {
     setAnchorEl(null);
   };
-  console.log(authUser)
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: "#212121" }}>

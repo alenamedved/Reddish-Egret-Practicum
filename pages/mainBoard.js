@@ -86,6 +86,7 @@ function updateDataInDb(docs, collection, dataToUpdate) {
 
 const MainBoard = () => {
   const [posts, setPosts] = useState([]);
+  const [filterByName, setFilterByName] = useState("");
   const [currentUser, setCurrentUser] = useState({
     userName: "",
     country: "",
@@ -103,7 +104,7 @@ const MainBoard = () => {
   // Listen for changes on loading and authUser, redirect if needed
 
   useEffect(() => {
-/*     if (loading && !authUser) router.push("/"); */
+    /*     if (loading && !authUser) router.push("/"); */
     if (authUser) {
       //fetch all posts and subscribe for updates
       db.collection("posts").onSnapshot((docs) => {
@@ -146,9 +147,15 @@ const MainBoard = () => {
     setCurrentUser(user);
   };
 
+//add functionality to filter posts by user name when click on username inside the post
+  function filterPostsByName(filterPosts) {
+    const filtered = posts.filter((post) => post.userName === filterPosts);
+    setPosts(filtered);
+  }
 
-console.log(currentUser)
-console.log(authUser)
+  console.log(filterByName)
+  console.log(currentUser);
+  console.log(posts);
   return (
     <>
       <CreatePost currentUser={currentUser} />
@@ -159,7 +166,7 @@ console.log(authUser)
         sx={{ padding: "5px" }}
         columns={2}
       >
-      {/* {user ? : } */}
+        {/* {user ? : } */}
         <ProfileCard
           currentUser={currentUser}
           updateUserInfo={updateUserInfo}
@@ -173,6 +180,7 @@ console.log(authUser)
                 post={post}
                 userId={authUser.uid}
                 currentUser={currentUser}
+                filterSet={(e) => filterPostsByName(e.target.children[0].previousSibling.data)}
               />
             ))}
           </Grid>
