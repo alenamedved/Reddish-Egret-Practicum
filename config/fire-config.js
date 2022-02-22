@@ -1,6 +1,7 @@
 import firebase from 'firebase';
-/* import firebase from 'firebase/app';
-import 'firebase/firestore'; */
+import 'firebase/storage';
+import 'firebase/firestore';
+import 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,4 +20,7 @@ const firebaseConfig = {
       console.error('Firebase initialization error', err.stack)}
   }
   const fire = firebase;
+  export let db = firebase.firestore();
+  export const storage = firebase.storage();
+  export const timestamp = firebase.firestore.Timestamp.now()
   export default fire;
