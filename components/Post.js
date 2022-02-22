@@ -73,7 +73,7 @@ export async function deleteDocFromCollection(collection, docId) {
     });
 }
 
-const Post = ({ post, userId, currentUser, filterSet }) => {
+const Post = ({ post, userId, currentUser, setFilter }) => {
   const [expanded, setExpanded] = useState(false);
   const [favorite, setFavorite] = useState(post.liked);
 
@@ -132,9 +132,6 @@ const Post = ({ post, userId, currentUser, filterSet }) => {
     }
   };
 
-  const filterPosts = () => {
-    console.log('click')
-  }
   //delete post with it comments from firestore
   const onDeletePostHandle = async (postId, commentCount) => {
     await deleteDocFromCollection("posts", postId);
@@ -171,10 +168,12 @@ const Post = ({ post, userId, currentUser, filterSet }) => {
           />
 
           <CardContent sx={{ display: "block", flexGrow: 2 }}>
-            <Button variant="text" onClick={(e)=> filterSet(e)}>
-              
-                {post.userName}
-
+            <Button
+              aria-label="click button to filter posts"
+              variant="text"
+              onClick={(e) => setFilter(e)}
+            >
+              {post.userName}
             </Button>
             <Typography variant="subtitle2" color="text.secondary">
               {/* {new Date(post.createdAt.toDate()).toDateString()} */}
