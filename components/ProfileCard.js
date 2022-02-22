@@ -39,7 +39,7 @@ function ProfileCard({ currentUser, updateUserInfo }) {
             updateUserInfo={updateUserInfo}
           />
         </CustomizedDialogs>
-        <CardMedia component="img" image={userImageUrl || "http://via.placeholder.com/400x300" } alt="avatar" />
+        <CardMedia component="img" image={userImageUrl || "https://via.placeholder.com/400x300" } alt="avatar" />
         <CardContent sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
           <Typography gutterBottom><strong>{userName}</strong></Typography>
           <Typography gutterBottom>Speaks <strong>{language}</strong></Typography>
