@@ -94,9 +94,9 @@ export default function ProfilePage({ currentUser, updateUserInfo }) {
           />
 
           <Image
-            src={user.userImageUrl || "http://via.placeholder.com/400x300"}
+            src={user.userImageUrl || "https://via.placeholder.com/400x300"}
             placeholder="blur"
-            blurDataURL="http://via.placeholder.com/400x300"
+            blurDataURL="https://via.placeholder.com/400x300"
             unoptimized={true}
             alt="avatar"
             width={400}
