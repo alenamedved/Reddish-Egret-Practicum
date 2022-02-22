@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-
 const style = {
   display: { xs: "block", sm: "none" },
 };
@@ -26,8 +25,10 @@ const Header = () => {
   };
 
   const router = useRouter();
+
   //check if mainboard or homepage opened
   const mainboard = router.pathname === "/mainBoard";
+
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -43,7 +44,6 @@ const Header = () => {
             src="../images/UTab-logos_white1.png"
             sx={{ width: "auto", height: 60, marginRight: "auto" }}
           />
-
           <div>
             <IconButton
               size="large"
@@ -82,49 +82,58 @@ const Header = () => {
                 <div>
                   <Button
                     color="inherit"
-                    sx={{
-                      "&:hover": {
-                        color: "black",
-                        backgroundColor: "white",
-                      },
-                      color: "white",
-                      backgroundColor: "black",
-                      m: 2,
-                    }}
-                    href={mainboard ? "/" : "/mainBoard"}
+                    href={"/"}
                   >
-                    {mainboard ? "Home" : "Main Board"}
+                    {" "}
+                    Home{" "}
                   </Button>
-          
+                  <Button
+                    color="inherit"
+                    href={"/mainBoard"}
+                  >
+                    {" "}
+                    Main Board{" "}
+                  </Button>
+                  <Button
+                    color="inherit"
+                    onClick={signOut}
+                  >
+                    {" "}
+                    Sign out{" "}
+                  </Button>
+                </div>
+              ) : (
+                <Box>
+                  <Button
+                    color="inherit"
+                    href={"/"}
+                  >
+                    {" "}
+                    Home{" "}
+                  </Button>
+                  <Button
+                    color="inherit"
+                    href={"/users/login"}
+                  >
+                    {" "}
+                    Login{" "}
+                  </Button>
+                  <Button
+                    color="inherit"
+                    href={"/users/join"}
+                  >
+                    {" "}
+                    JoinUs{" "}
+                  </Button>
+                </Box>
+              )}
+            </Menu>
+          </div>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {!loading && authUser ? (
+              <>
                 <Button
                   color="inherit"
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    color: "white",
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
-                  onClick={signOut}
-                >
-                  {" "}
-                  Sign out{" "}
-                </Button>
-              </div>
-            ) : (
-              <Box>
-                <Button
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    color: "white",
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
                   href={"/"}
                 >
                   {" "}
@@ -132,55 +141,13 @@ const Header = () => {
                 </Button>
                 <Button
                   color="inherit"
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    color: "white",
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
-                  href={"/users/login"}
+                  href={"/mainBoard"}
                 >
                   {" "}
-                  Login{" "}
+                  Main Board {" "}
                 </Button>
                 <Button
                   color="inherit"
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    color: "white",
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
-                  href={"/users/join"}
-                >
-                  {" "}
-                  JoinUs{" "}
-                </Button>
-              </Box>
-            )}
-          </Menu>
-</div>
-
-
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {!loading && authUser ? (
-              <>
-                <Button
-                  color="inherit"
-                  sx={{ backgroundColor: "black", m: 2 }}
-                  href={mainboard ? "/" : "/mainBoard"}
-                >
-                  {mainboard ? "Home" : "Main Board"}
-                </Button>
-                <Button
-                  color="inherit"
-                  sx={{ backgroundColor: "black", m: 2 }}
                   onClick={signOut}
                 >
                   {" "}
@@ -191,30 +158,13 @@ const Header = () => {
               <Box>
                 <Button
                   color="inherit"
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
                   href={"/"}
                 >
                   {" "}
                   Home{" "}
                 </Button>
-
                 <Button
                   color="inherit"
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
                   href={"/users/login"}
                 >
                   {" "}
@@ -222,14 +172,6 @@ const Header = () => {
                 </Button>
                 <Button
                   color="inherit"
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
                   href={"/users/join"}
                 >
                   {" "}

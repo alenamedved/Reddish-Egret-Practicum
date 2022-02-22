@@ -5,7 +5,7 @@ import { Box } from "@mui/system";
 
 function educationlanguage() {
   return (
-    <Container sx={{ backgroundColor: "#fff3e0", pb: 10, mb: 20,mt: 7 }} >
+    <Container sx={{ backgroundColor: "#fff3e0", pb: 10, mb: 20, mt: 7 }} >
       <Box>
         <Typography variant="h4" marginTop={3}>
           Educational Resources for Immigrants, Refugees, Asylees and other New
