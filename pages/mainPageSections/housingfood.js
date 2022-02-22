@@ -73,21 +73,21 @@ function Resources() {
   return (
     <>
       <Container >
-        <Typography variant="h3" component="h1" marginTop={3}>
+        <Typography variant="h3" component="h1" mt={3}>
           Housing Resources for Immigrants
         </Typography>
         <Box>
-          <Typography variant="paragraph" component="p" marginTop={3}>
+          <Typography variant="paragraph" component="p" mt={3}>
             There are housing programs in the United States that can provide affordable housing for all immigrants,
             including those that are undocumented. This guide will explain what federal affordable housing programs are open to immigrants,
             provide the eligibility requirements for these programs and describe other resources that can help immigrant households find an apartments they can afford.
             Please click on the links below to find more info
           </Typography>
         </Box>
-        <Grid container direction="column" spacing={1} marginTop={4} >
+        <Grid container direction="column" spacing={1} mt={4} >
           <Grid item >
             <Paper >
-              <Grid container padding={3} justifyContent="space-between" xs={12}>
+              <Grid container padding={3} justifyContent="space-between" >
                 <Grid item  >
                   <Typography sx={{ sm: { display: "none" } }}>
                     Affordable Housing
@@ -101,8 +101,8 @@ function Resources() {
               </Grid>
             </Paper>
           </Grid>
-          <Grid marginTop={3}>
-            <Paper marginTop={4}>
+          <Grid mt={3}>
+            <Paper mt={4}>
               <Grid container padding={3} justifyContent="space-between" >
                 <Grid item>
                   <Typography>
@@ -117,8 +117,8 @@ function Resources() {
               </Grid>
             </Paper>
           </Grid>
-          <Grid marginTop={3}>
-            <Paper marginTop={4}>
+          <Grid mt={3}>
+            <Paper mt={4}>
               <Grid container padding={3} justifyContent="space-between" >
                 <Grid item>
                   <Typography>
@@ -133,8 +133,8 @@ function Resources() {
               </Grid>
             </Paper>
           </Grid>
-          <Grid marginTop={3}>
-            <Paper marginTop={4}>
+          <Grid mt={3}>
+            <Paper mt={4}>
               <Grid container padding={3} justifyContent="space-between" >
                 <Grid item>
                   <Typography>
@@ -152,15 +152,15 @@ function Resources() {
         </Grid>
       </Container>
       <Container>
-        <Typography variant="h5" component="h1" marginTop={3}> Food </Typography>
-        <Grid container marginTop={3} >
+        <Typography variant="h5" component="h1" mt={3}> Food </Typography>
+        <Grid container mt={3} >
           <Grid item xs={12} >
             <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="restaurant" width="100%" height="auto" />
           </Grid>
-          <Grid item marginTop={2} xs={12}>
+          <Grid item mt={2} xs={12}>
             <Button variant="contained" ><Link href="https://www.nytimes.com/interactive/2021/dining/favorite-restaurant-list-america.html" target="_blank">Restaurant List</Link></Button>
           </Grid>
-          <Grid item xs={12} marginTop={2}>
+          <Grid item xs={12} mt={2}>
             <ImageList sx={{ width: 300, height: 325, marginLeft: 2 }}>
               {itemData.map((item) => (
                 <ImageListItem key={item.img}>
@@ -180,7 +180,7 @@ function Resources() {
             </ImageList>
           </Grid>
         </Grid>
-        <Box marginTop={2} >
+        <Box mt={2} >
           <Button variant="contained"><Link href="https://frac.org/wp-content/uploads/State-Food-Assistance-Programs.pdf" target="_blank" >State Food Assistance Programs</Link></Button>
         </Box>
       </Container>

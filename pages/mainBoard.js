@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../config/fire-config";
-import { useRouter } from "next/router";
 import { useAuth } from "../components/context/authUserContext";
 
 import Post from "../components/Post";
@@ -9,7 +8,6 @@ import CreatePost from "../components/addPost";
 
 import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
-
 
 function postsCollection() {
   return new Promise((resolve) => {
@@ -86,8 +84,14 @@ function updateDataInDb(docs, collection, dataToUpdate) {
   });
 }
 
+
 const MainBoard = () => {
   const [posts, setPosts] = useState([]);
+  const [filterByName, setFilterByName] = useState({
+    filter: "",
+    filterIsSet: false,
+  });
+
   const [currentUser, setCurrentUser] = useState({
     userName: "",
     country: "",
@@ -100,12 +104,33 @@ const MainBoard = () => {
 
   const { authUser, loading } = useAuth();
 
-  /*  const router = useRouter(); */
 
-  // Listen for changes on loading and authUser, redirect if needed
-  /*  useEffect(() => {
-    if (!loading && authUser) router.push("/");
-  }, [authUser, loading, router]); */
+  // Listen for changes on loading and authUser
+  useEffect(() => {
+
+    if (authUser) {
+      //fetch all posts and subscribe for updates
+      db.collection("posts").onSnapshot((docs) => {
+        checkForLikedPosts(authUser.uid).then((response) => {
+          if (filterByName.filter === "") {
+            setPosts(response);
+          } else {
+            filterPostsByName(filterByName);
+          }
+        });
+      });
+      //find current user into collention "users"
+      db.collection("users")
+        .doc(authUser.uid)
+        .get()
+        .then((snapshot) => {
+          const user = snapshot.data();
+          if (user) {
+            setCurrentUser(user);
+          }
+        });
+    }
+  }, [authUser, loading, filterByName]);
 
   //callback function is being called when user updates profile
   //it updates currentUser state, and updated userImgUrl pass and userName to each users post or comment
@@ -129,27 +154,26 @@ const MainBoard = () => {
     setCurrentUser(user);
   };
 
-  useEffect(() => {
-    if (authUser) {
-      //fetch all posts and subscribe for updates
-      db.collection("posts").onSnapshot((docs) => {
-        checkForLikedPosts(authUser.uid).then((response) => {
-          setPosts(response);
-        });
+  //add functionality to filter posts by user name when click on username inside the post
+  function filterPostsByName(filterByName) {
+    const filtered = posts.filter(
+      (post) => post.userName === filterByName.filter
+    );
+    setPosts(filtered);
+  }
+  function setFilter(e) {
+    if (!filterByName.filterIsSet) {
+      setFilterByName({
+        filter: e.target.children[0].previousSibling.data,
+        filterIsSet: true,
       });
-      //find current user into collention "users"
-      db.collection("users")
-        .doc(authUser.uid)
-        .get()
-        .then((snapshot) => {
-          const user = snapshot.data();
-          if (user) {
-            setCurrentUser(user);
-          }
-        });
+    } else {
+      setFilterByName({
+        filter: "",
+        filterIsSet: false,
+      });
     }
-  }, [authUser]);
-
+  }
 
   return (
     <>
@@ -161,21 +185,27 @@ const MainBoard = () => {
         sx={{ padding: "5px" }}
         columns={2}
       >
+        {/* {user ? : } */}
+        <ProfileCard
+          currentUser={currentUser}
+          updateUserInfo={updateUserInfo}
+        />
 
-        <ProfileCard currentUser={currentUser} updateUserInfo={updateUserInfo} />
-        <Grid gridRow={1}>
-          {posts.map((post) => (
-            <Post
-              key={post.postId}
-              post={post}
-              userId={authUser.uid}
-              currentUser={currentUser}
-            />
-          ))}
-        </Grid>
+        {authUser && posts ? (
+          <Grid gridRow={1}>
+            {posts.map((post) => (
+              <Post
+                key={post.postId}
+                post={post}
+                userId={authUser.uid}
+                currentUser={currentUser}
+                setFilter={setFilter}
+              />
+            ))}
+          </Grid>
+        ) : null}
       </Grid>
     </>
-
   );
 };
 

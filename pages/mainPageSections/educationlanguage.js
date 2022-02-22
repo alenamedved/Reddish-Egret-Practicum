@@ -12,7 +12,7 @@ function educationlanguage() {
           Americans
         </Typography>
         <Typography variant="h6" marginTop={3}>
-          Welcome to the U.S. Department of Education's and Language's page
+          Welcome to the U.S. Department of Education`&apos;`s and Language`&apos;`s page
           dedicated to providing information and resources for immigrant, refugee,
           asylee students and families
         </Typography>

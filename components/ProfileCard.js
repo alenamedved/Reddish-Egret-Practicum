@@ -24,7 +24,7 @@ import {
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import CustomizedDialogs from "./dialog";
-import ProfilePage from "/pages//profilepage";
+import ProfilePage from "./profilepage";
 
 function ProfileCard({ currentUser, updateUserInfo }) {
 
