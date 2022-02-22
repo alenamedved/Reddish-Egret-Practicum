@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { TextField, Button, Modal, Box, Typography } from "@material-ui/core";
+import { TextField, Button, Modal, Box, Typography } from "@mui/material";
 import { db, serverTimestamp } from "../config/fire-config";
 import { useAuth } from "./context/authUserContext";
 import toast, { Toaster } from "react-hot-toast";
