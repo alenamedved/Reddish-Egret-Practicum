@@ -2,6 +2,7 @@ import { Button, Container, Grid, Paper, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import Link from 'next/link';
 import React from 'react'
+import Image from 'next/image';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
@@ -94,7 +95,7 @@ function Resources() {
                   </Typography>
                 </Grid>
                 <Grid sx={{ xs: { display: "flex", alignItems: "center", justifyContent: "center" } }}>
-                  <Link href="https://affordablehousingonline.com/guide/housing-for-immigrants" target="_blank">
+                  <Link href="https://affordablehousingonline.com/guide/housing-for-immigrants" target="_blank" passHref>
                     <Button>go to website</Button>
                   </Link>
                 </Grid>
@@ -110,7 +111,7 @@ function Resources() {
                   </Typography>
                 </Grid>
                 <Grid>
-                  <Link href="https://www.hudexchange.info/housing-and-homeless-assistance/homeless-help/" target="_blank" class="blue-button external">
+                  <Link href="https://www.hudexchange.info/housing-and-homeless-assistance/homeless-help/" target="_blank" class="blue-button external" passHref>
                     <Button>Find a Continuum of Care in Your Community</Button>
                   </Link>
                 </Grid>
@@ -126,7 +127,7 @@ function Resources() {
                   </Typography>
                 </Grid>
                 <Grid>
-                  <Link href="https://www.hud.gov/topics/rental_assistance" target="_blank">
+                  <Link href="https://www.hud.gov/topics/rental_assistance" target="_blank" passHref>
                     <Button>HUD Rental Assistance</Button>
                   </Link>
                 </Grid>
@@ -142,7 +143,7 @@ function Resources() {
                   </Typography>
                 </Grid>
                 <Grid>
-                  <Link href="https://www.nilc.org/wp-content/uploads/2016/03/rental_housing_1005.pdf" target="_blank">
+                  <Link href="https://www.nilc.org/wp-content/uploads/2016/03/rental_housing_1005.pdf" target="_blank" passHref>
                     <Button>Rental Housing Programs</Button>
                   </Link>
                 </Grid>
@@ -155,7 +156,7 @@ function Resources() {
         <Typography variant="h5" component="h1" mt={3}> Food </Typography>
         <Grid container mt={3} >
           <Grid item xs={12} >
-            <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="restaurant" width="100%" height="auto" />
+            <Image src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="restaurant" width="100%" height="auto" />
           </Grid>
           <Grid item mt={2} xs={12}>
             <Button variant="contained" ><Link href="https://www.nytimes.com/interactive/2021/dining/favorite-restaurant-list-america.html" target="_blank">Restaurant List</Link></Button>
@@ -164,7 +165,7 @@ function Resources() {
             <ImageList sx={{ width: 300, height: 325, marginLeft: 2 }}>
               {itemData.map((item) => (
                 <ImageListItem key={item.img}>
-                  <img
+                  <Image
                     src={`${item.img}?w=248&fit=crop&auto=format`}
                     srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                     alt={item.title}
