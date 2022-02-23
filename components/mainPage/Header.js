@@ -33,7 +33,7 @@ const Header = () => {
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "#212121" }}>
+      <AppBar position="fixed" sx={{ backgroundColor: "#212121" }}>
         <Toolbar>
           <CardMedia
             component="img"
@@ -42,13 +42,12 @@ const Header = () => {
             sx={{ width: "auto", height: 60, marginRight: "auto" }}
           />
 
-          <div>
+          <Box sx={{display:"flexbox"}}>
             <IconButton
               size="large"
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 2 }}
               onClick={handleMenu}
             >
               <MenuIcon
@@ -76,19 +75,11 @@ const Header = () => {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
+            
               {!loading && authUser ? (
                 <div>
                   <Button
                     color="inherit"
-                    sx={{
-                      "&:hover": {
-                        color: "black",
-                        backgroundColor: "white",
-                      },
-                      color: "white",
-                      backgroundColor: "black",
-                      m: 2,
-                    }}
                     href={mainboard ? "/" : "/mainBoard"}
                   >
                     {mainboard ? "Home" : "Main Board"}
@@ -96,33 +87,15 @@ const Header = () => {
           
                 <Button
                   color="inherit"
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    color: "white",
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
                   onClick={signOut}
                 >
-                  {" "}
-                  Sign out{" "}
+                  Sign out
                 </Button>
               </div>
             ) : (
               <Box>
                 <Button
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    color: "white",
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
+                    color="inherit"
                   href={"/"}
                 >
                   {" "}
@@ -130,31 +103,13 @@ const Header = () => {
                 </Button>
                 <Button
                   color="inherit"
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    color: "white",
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
+
                   href={"/users/login"}
                 >
-                  {" "}
-                  Login{" "}
+                  Login
                 </Button>
                 <Button
                   color="inherit"
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    color: "white",
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
                   href={"/users/join"}
                 >
                   {" "}
@@ -163,7 +118,8 @@ const Header = () => {
               </Box>
             )}
           </Menu>
-</div>
+          
+</Box>
 
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
@@ -171,14 +127,14 @@ const Header = () => {
               <>
                 <Button
                   color="inherit"
-                  sx={{ backgroundColor: "black", m: 2 }}
+                  sx={{ m: 2 }}
                   href={mainboard ? "/" : "/mainBoard"}
                 >
                   {mainboard ? "Home" : "Main Board"}
                 </Button>
                 <Button
                   color="inherit"
-                  sx={{ backgroundColor: "black", m: 2 }}
+                  sx={{  m: 2 }}
                   onClick={signOut}
                 >
                   {" "}
@@ -190,11 +146,6 @@ const Header = () => {
                 <Button
                   color="inherit"
                   sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    backgroundColor: "black",
                     m: 2,
                   }}
                   href={"/"}
@@ -205,14 +156,6 @@ const Header = () => {
 
                 <Button
                   color="inherit"
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
                   href={"/users/login"}
                 >
                   {" "}
@@ -220,14 +163,7 @@ const Header = () => {
                 </Button>
                 <Button
                   color="inherit"
-                  sx={{
-                    "&:hover": {
-                      color: "black",
-                      backgroundColor: "white",
-                    },
-                    backgroundColor: "black",
-                    m: 2,
-                  }}
+                 
                   href={"/users/join"}
                 >
                   {" "}
