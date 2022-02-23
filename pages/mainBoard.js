@@ -8,6 +8,7 @@ import ProfileCard from "../components/ProfileCard";
 import CreatePost from "../components/addPost";
 
 import Grid from "@mui/material/Grid";
+import { Box } from "@mui/system";
 
 
 function postsCollection() {
@@ -151,31 +152,50 @@ const MainBoard = () => {
 
 
   return (
-    <>
-      <CreatePost currentUser={currentUser} />
-      <Grid
-        display="grid"
-        gridTemplateColumns="repeat(2, 1fr)"
-        container
-        sx={{ padding: "5px" }}
-        columns={2}
-      >
-
-        <ProfileCard currentUser={currentUser} updateUserInfo={updateUserInfo} />
-        <Grid gridRow={1}>
-          {posts.map((post) => (
-            <Post
-              key={post.postId}
-              post={post}
-              userId={authUser.uid}
-              currentUser={currentUser}
-            />
-          ))}
-        </Grid>
-      </Grid>
-    </>
+   <Grid container sx={{mb: 10}}>
+     <Grid item sm={2}><ProfileCard currentUser={currentUser} updateUserInfo={updateUserInfo} /></Grid>
+     <Grid item sm={7}>  
+     <Box sx={{m: 5}}><CreatePost currentUser={currentUser} /></Box>
+       {posts.map((post) => (   
+          <Post
+     key={post.postId}
+      post={post}
+       userId={authUser.uid}
+      currentUser={currentUser}
+     />
+    ))}</Grid>
+     <Grid item sm={3}></Grid>
+   </Grid>
 
   );
 };
 
 export default MainBoard;
+
+
+
+
+
+
+
+// <CreatePost currentUser={currentUser} />
+// <Grid
+//   display="grid"
+//   gridTemplateColumns="repeat(2, 1fr)"
+//   container
+//   sx={{ padding: "5px" }}
+//   columns={2}
+// >
+
+//   <ProfileCard currentUser={currentUser} updateUserInfo={updateUserInfo} />
+//   <Grid gridRow={1}>
+//     {posts.map((post) => (
+//       <Post
+//         key={post.postId}
+//         post={post}
+//         userId={authUser.uid}
+//         currentUser={currentUser}
+//       />
+//     ))}
+//   </Grid>
+// </Grid>
