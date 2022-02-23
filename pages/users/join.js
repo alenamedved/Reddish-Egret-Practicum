@@ -42,9 +42,10 @@ export default function Register() {
         .then((authUser) => {
           console.log("Success. The user is created in Firebase");
           toast.success("Success!")
+
           //if a new user - push to profile page, if not - main board
           if (authUser.additionalUserInfo.isNewUser) {
-            router.push("/profilepage");
+            router.push("/mainBoard");
           } else {
             router.push("/mainBoard");
           }

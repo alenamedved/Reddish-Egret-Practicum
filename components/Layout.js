@@ -20,11 +20,8 @@ export default function Layout({ children }) {
         <meta name="og:title" content={siteTitle} />
         <title>{siteTitle}</title>
       </Head>
-
       <Header />
-
       <main>{children}</main>
-
       <Footer />
     </div>
   );

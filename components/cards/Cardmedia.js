@@ -19,8 +19,7 @@ const Cardmedia = () => {
         Jobs and Career
        </Typography>
        <Typography variant="body2" color="text.secondary">
-        Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica
+       This guide to jobs for new immigrants in the USA is a great place to start your search.
        </Typography>
       </CardContent>
       <CardActions>
@@ -39,12 +38,11 @@ const Cardmedia = () => {
        image="./images/housing.jpg"
       />
       <CardContent>
-       <Typography gutterBottom variant="h5" component="div">
-        Housing And Food
+       <Typography gutterBottom variant="h4" component="div">
+        Housing and Food
        </Typography>
        <Typography variant="body2" color="text.secondary">
-        Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica
+       Welcome to the United States: A Guide for New Immigrants to search for Housing and find Food.
        </Typography>
       </CardContent>
       <CardActions>
@@ -67,8 +65,7 @@ const Cardmedia = () => {
         Education and Language
        </Typography>
        <Typography variant="body2" color="text.secondary">
-        Lizards are a widespread group of squamate reptiles, with over 6,000
-        species, ranging across all continents except Antarctica
+       Immerse Yourself In Innovative Teaching and Learning Methods, Search Us Today.
        </Typography>
       </CardContent>
       <CardActions>

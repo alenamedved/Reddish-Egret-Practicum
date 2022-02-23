@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import fire from "../config/fire-config";
 import "firebase/firestore";
-import { storage, db } from "../config/fire-config";
+import { storage } from "../config/fire-config";
 import { CountryDropdown } from "react-country-region-selector";
-import Languages from "../components/Languages";
+import Languages from "./Languages";
 import "@firebase/auth";
 import { useRouter } from "next/router";
-import { useAuth } from "../components/context/authUserContext";
-import TagsInput from "../components/TagsHobbies";
+import { useAuth } from "./context/authUserContext";
+import TagsInput from "./TagsHobbies";
 import Image from "next/image";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -18,7 +18,6 @@ const popUp = () => {
 
 export default function ProfilePage({ currentUser, updateUserInfo }) {
   const { authUser } = useAuth();
-  const router = useRouter();
 
   const [user, setUser] = useState(currentUser);
 
@@ -95,9 +94,10 @@ export default function ProfilePage({ currentUser, updateUserInfo }) {
           />
 
           <Image
-            src={user.userImageUrl || "http://via.placeholder.com/400x300"}
+            src={user.userImageUrl || "https://via.placeholder.com/400x300"}
             placeholder="blur"
-            blurDataURL="http://via.placeholder.com/400x300"
+            blurDataURL="https://via.placeholder.com/400x300"
+            unoptimized={true}
             alt="avatar"
             width={400}
             height={300}

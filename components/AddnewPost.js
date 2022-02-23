@@ -1,4 +1,4 @@
-import { TextField, Button } from "@material-ui/core";
+import { Button, TextareaAutosize } from "@mui/material";
 import React, { useState } from "react";
 import { db, timestamp } from "../config/fire-config";
 import { useAuth } from "../components/context/authUserContext";
@@ -24,19 +24,19 @@ const AddnewPost = ({ currentUser, handleClose }) => {
   };
   return (
     <>
-      <TextField
+      <TextareaAutosize
         style={{
           width: "90%",
           marginLeft: "auto",
           marginRight: "auto",
-          paddingTop: "50px",
+          paddingTop: "5px",
           fontWeight: 500,
         }}
         value={input}
         placeholder="what is on your mind"
-        multiline
+        minRows={5}
         row={5}
-        rowsMax={10}
+        maxRows={10}
         onChange={(e) => setInput(e.target.value)}
       />
       <Button

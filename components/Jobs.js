@@ -14,19 +14,19 @@ const useStyles = makeStyles(() => ({
 
 }));
 const Jobs = () => {
-  const classes = useStyles();
+  const classes = useStyles(); 
   return (
     <>
 
       <Box p={2} mb={2} className={classes.wrapper}>
         <Grid container alignItems="center">
           <Grid item xs className={classes.jobs}>
-            <Typography variant='subtitle1'>  <Link href="https://www.linkedin.com"><a>Linkedin</a></Link></Typography>
+            <Typography variant='subtitle1'>  <Link href="https://www.linkedin.com">Linkedin</Link></Typography>
             <Typography variant='subtitle2'>Google</Typography>
           </Grid>
           <Grid item xs className={classes.items}>
 
-            <p> connect the world’s professionals to make them more productive and successful</p>
+            <p>Connect the world&apos;s professionals to make them more productive and successful</p>
 
           </Grid>
         </Grid>
@@ -34,12 +34,12 @@ const Jobs = () => {
       <Box p={2} mb={2} className={classes.wrapper}>
         <Grid container alignItems="center">
           <Grid item xs className={classes.jobs}>
-            <Typography variant='subtitle1'><Link href="https://www.indeed.com"><a>indeed</a></Link></Typography>
+            <Typography variant='subtitle1'><Link href="https://www.indeed.com">indeed</Link></Typography>
             <Typography variant='subtitle2'>facebook</Typography>
           </Grid>
           <Grid item xs className={classes.items}>
 
-            <p>  job site in the world1 with over 250 million unique visitors2 every month.
+            <p>Job site in the world with over 250 million unique visitors every month.
               Indeed strives to put job seekers first, giving them free access to search for jobs, post resumes,
               and research companies. Every day, we connect millions of people to new opportunities.</p>
 
@@ -54,7 +54,7 @@ const Jobs = () => {
           </Grid>
           <Grid item xs className={classes.items}>
 
-            <p> GovernmentJobs.com is the only government sector job board created from the world's foremost fully integrated recruitment,
+            <p>Government Jobs is the only government sector job board created from the world&apos;s for most fully integrated recruitment,
               selection and applicant tracking system called NEOGOV Insight designed specifically for public sector employers</p>
 
           </Grid>
@@ -68,7 +68,7 @@ const Jobs = () => {
           </Grid>
           <Grid item xs className={classes.items}>
 
-            <p>At CareerBuilder, we’ve been giving people the tools they need to find personal
+            <p>At CareerBuilder, we&apos;ve been giving people the tools they need to find personal
               success for the last 20+ years—from the hundreds of thousands of employers
               seeking great talent to the millions of jobseekers out there looking for the right opportunities. </p>
 

@@ -23,6 +23,7 @@ import CommentIcon from "@mui/icons-material/Comment";
 import { db } from "../config/fire-config";
 import firebase from "firebase";
 import { responseSymbol } from "next/dist/server/web/spec-compliant/fetch-event";
+import { Button } from "@mui/material";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -72,7 +73,7 @@ export async function deleteDocFromCollection(collection, docId) {
     });
 }
 
-const Post = ({ post, userId, currentUser }) => {
+const Post = ({ post, userId, currentUser, setFilter }) => {
   const [expanded, setExpanded] = useState(false);
   const [favorite, setFavorite] = useState(post.liked);
 
@@ -149,7 +150,7 @@ const Post = ({ post, userId, currentUser }) => {
   const dateCreatedAt = new Date(post.createdAt.toDate());
 
   return (
-    <Grid item xs={6} md={6} sx={{ margin: "10px 0px" }} columns={1}>
+    <Grid item xs my={1}>
       <Card>
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <CardMedia
@@ -167,9 +168,13 @@ const Post = ({ post, userId, currentUser }) => {
           />
 
           <CardContent sx={{ display: "block", flexGrow: 2 }}>
-            <Typography component="h2" variant="h5">
+            <Button
+              aria-label="click button to filter posts"
+              variant="text"
+              onClick={(e) => setFilter(e)}
+            >
               {post.userName}
-            </Typography>
+            </Button>
             <Typography variant="subtitle2" color="text.secondary">
               {/* {new Date(post.createdAt.toDate()).toDateString()} */}
               Posted at {dateCreatedAt.toLocaleString()}
@@ -181,14 +186,17 @@ const Post = ({ post, userId, currentUser }) => {
 
           {post.author === authUser.uid && (
             <CardActions
-            sx={{ mr: "10px"}}
+              sx={{ mr: "10px" }}
               onClick={() => onDeletePostHandle(post.postId, post.commentCount)}
             >
               <RiDeleteBin2Line aria-label="delete post button" size="25px" />
             </CardActions>
           )}
         </Box>
-        <CardActions disableSpacing sx={{ justifyContent: "space-between", mr: "10px" }} >
+        <CardActions
+          disableSpacing
+          sx={{ justifyContent: "space-between", mr: "10px" }}
+        >
           <IconButton
             aria-label="add to favorites"
             onClick={() => favoriteClick(post.postId)}
