@@ -5,14 +5,14 @@ import { Box } from "@mui/system";
 
 function educationlanguage() {
   return (
-    <Container sx={{ backgroundColor: "#fff3e0", pb: 10, mb: 20, mt: 7 }} >
-      <Box>
+    <Container sx={{ pb: 10, mb: 0, mt: 10 }} >
+      <Box >
         <Typography variant="h4" marginTop={3}>
           Educational Resources for Immigrants, Refugees, Asylees and other New
           Americans
         </Typography>
         <Typography variant="h6" marginTop={3}>
-          Welcome to the U.S. Department of Education`&apos;`s and Language`&apos;`s page
+          Welcome to the U.S. Department of Education&apos;s and Language&apos;s page
           dedicated to providing information and resources for immigrant, refugee,
           asylee students and families
         </Typography>
