@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Cardmedia = () => {
  return (
-  <Grid container spacing={3} sx={{ mt: 5, mb: 50, dispalay: "flex", alignItem: "center", justifyContent: "center" }}>
+  <Grid container spacing={3} sx={{ mt: 5, mb: 10, dispalay: "flex", alignItem: "center", justifyContent: "center" }}>
    <Grid item xs={12} md={5} lg={3} sx={{ width: "auto", m: 2 }}>
     <Link href={"/mainPageSections/jobs"} passHref>
      <Card sx={{ maxWidth: "auto", justifyContent: "center" }}  >
@@ -38,7 +38,7 @@ const Cardmedia = () => {
        image="./images/housing.jpg"
       />
       <CardContent>
-       <Typography gutterBottom variant="h4" component="div">
+       <Typography gutterBottom variant="h5" component="div">
         Housing and Food
        </Typography>
        <Typography variant="body2" color="text.secondary">

@@ -10,6 +10,7 @@ import { useAuth } from "./context/authUserContext";
 import TagsInput from "./TagsHobbies";
 import Image from "next/image";
 import toast, { Toaster } from "react-hot-toast";
+import { Avatar, Button, TextField } from "@mui/material";
 
 // Popup function to redirect after updating profile
 const popUp = () => {
@@ -83,84 +84,84 @@ export default function ProfilePage({ currentUser, updateUserInfo }) {
   return (
     <>
       <Toaster />
-      <fieldset>
-        <div style={{ display: "block" }}>
-          <input
-            type="file"
-            accept="image/*"
-            name="photo"
-            style={{ margin: "20px" }}
-            onChange={handleImageChange}
-          />
+ <div style={{ display: "block",marginBottom: 30 }}>
+<input
+  type="file"
+  accept="image/*"
+  name="photo"
+  style={{ margin: "20px" }}
+  onChange={handleImageChange}
+/>
 
-          <Image
-            src={user.userImageUrl || "https://via.placeholder.com/400x300"}
-            placeholder="blur"
-            blurDataURL="https://via.placeholder.com/400x300"
-            unoptimized={true}
-            alt="avatar"
-            width={400}
-            height={300}
-          />
+<Image
+  src={user.userImageUrl || "https://via.placeholder.com/400x300"}
+  placeholder="blur"
+  blurDataURL="https://via.placeholder.com/400x300"
+  unoptimized={true}
+  alt="avatar"
+  width={400}
+  height={300}
+/>
 
-          <button onClick={removeSelectedImage}>Remove This Image</button>
-          <br />
-        </div>
-        <br />
-        <div>
-          <label htmlFor="userName">User name</label>&nbsp;&nbsp;
-          <input
-            type="text"
-            id="userName"
-            value={user.userName}
-            onChange={(target) =>
-              setUser({ ...user, userName: target.target.value })
-            }
-          />
-        </div>
-        <div>
-          <label>Language:</label>&nbsp;
-          <select
-            value={user.language}
-            onChange={(target) =>
-              setUser({ ...user, language: target.target.value })
-            }
-          >
-            {Languages.map((language, index) => (
-              <option key={index}>{language.value} </option>
-            ))}
-          </select>
-        </div>
-        <br />
-        <div>
-          <label htmlFor="location">Location</label>&nbsp;&nbsp;
-          <input
-            type="text"
-            id="location"
-            value={user.location}
-            onChange={(target) =>
-              setUser({ ...user, location: target.target.value })
-            }
-          />
-        </div>
-        <br />
-        <div>
-          <label>Country:</label>&nbsp;
-          <CountryDropdown
-            value={user.country}
-            onChange={(target) => {
-              console.log(target);
-              setUser({ ...user, country: target });
-            }}
-          />
-        </div>
-        <br />
-        <TagsInput selectedTags={selectedTags} hobbies={user.hobbies} />
-        <br />
-        <button type="submit" onClick={handleProfileUpload}>
-          Save
-        </button>
-      </fieldset>
+<button onClick={removeSelectedImage}>Remove This Image</button>
+<br />
+</div>
+<br />
+<div>
+<label htmlFor="userName">User name</label>&nbsp;&nbsp;
+<input
+  type="text"
+  id="userName"
+  value={user.userName}
+  onChange={(target) =>
+    setUser({ ...user, userName: target.target.value })
+  }
+/>
+</div>
+<div>
+<label>Language:</label>&nbsp;
+<select
+  value={user.language}
+  onChange={(target) =>
+    setUser({ ...user, language: target.target.value })
+  }
+>
+  {Languages.map((language, index) => (
+    <option key={index}>{language.value} </option>
+  ))}
+</select>
+</div>
+<br />
+<div>
+<label htmlFor="location">Location</label>&nbsp;&nbsp;
+<input
+  type="text"
+  id="location"
+  value={user.location}
+  onChange={(target) =>
+    setUser({ ...user, location: target.target.value })
+  }
+/>
+</div>
+<br />
+<div>
+<label>Country:</label>&nbsp;
+<CountryDropdown
+  value={user.country}
+  onChange={(target) => {
+    console.log(target);
+    setUser({ ...user, country: target });
+  }}
+/>
+</div>
+<br />
+<TagsInput selectedTags={selectedTags} hobbies={user.hobbies} />
+<br />
+<button type="submit" onClick={handleProfileUpload}>
+Save
+</button>
     </>
   );
 }
+
+
