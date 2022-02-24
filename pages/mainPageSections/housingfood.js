@@ -73,7 +73,7 @@ const itemData = [
 function Resources() {
   return (
     <>
-      <Container>
+      <Container sx={{mt: 10}} >
         <Typography variant="h3" component="h1" mt={3}>
           Housing Resources for Immigrants
         </Typography>
