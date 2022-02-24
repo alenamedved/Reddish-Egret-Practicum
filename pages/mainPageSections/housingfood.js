@@ -111,7 +111,7 @@ function Resources() {
                     target="_blank"
                     passHref
                   >
-                    go to website
+                    <Button>go to website</Button>
                   </Link>
                 </Grid>
               </Grid>
@@ -130,7 +130,7 @@ function Resources() {
                     class="blue-button external"
                     passHref
                   >
-                    Find a Continuum of Care in Your Community
+                    <Button>Find a Continuum of Care in Your Community</Button>
                   </Link>
                 </Grid>
               </Grid>
@@ -148,7 +148,7 @@ function Resources() {
                     target="_blank"
                     passHref
                   >
-                    HUD Rental Assistance
+                    <Button>HUD Rental Assistance</Button>
                   </Link>
                 </Grid>
               </Grid>
@@ -166,7 +166,7 @@ function Resources() {
                     target="_blank"
                     passHref
                   >
-                    Rental Housing Programs
+                    <Button>Rental Housing Programs</Button>
                   </Link>
                 </Grid>
               </Grid>
