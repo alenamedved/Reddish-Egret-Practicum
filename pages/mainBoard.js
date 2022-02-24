@@ -182,7 +182,7 @@ const MainBoard = () => {
         gridTemplateRows="4rem 1fr"
         gap={2}
         container
-        sx={{ padding: "20px", marginLeft: "5px" }}
+        sx={{ padding: "20px", marginLeft: "5px",mt: 10 }}
         columns={2}
       >
         <ProfileCard
