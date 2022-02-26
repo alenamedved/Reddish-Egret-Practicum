@@ -129,9 +129,9 @@ const SearchUsers = ({ currentUser, updateUserInfo }) => {
   return (
     <>
       <Toaster />
-      <div className="container">
+      <div className="container" style={{paddingTop:"50px",paddingBottom:"60px", marginLeft:"10px"}}>
         <h2>Search for users</h2>
-        <h3>Use the search below to find users by name, country, hobbies</h3>
+        <h3>Want to connect with some of the users ? Who knows, you might have some things in common!<br/> Use the search box below to find users by name, country, hobby.</h3>
         <Grid container>
           <Grid item>
             <TextField
@@ -139,20 +139,26 @@ const SearchUsers = ({ currentUser, updateUserInfo }) => {
               label="Search Users"
               type="search"
               variant="standard"
+              onKeyUp={(e) => {
+                  if (e.key === "Enter") {
+                    handleOnClick(e);
+                  }
+              }}
               onChange={(e) => setValue(e.target.value)}
             />
           </Grid>
 
-          <Grid item alignItems="stretch" style={{ display: "flex" }}>
-            <Button onClick={handleOnClick} color="primary" variant="contained">
+          <Grid item alignItems="stretch" style={{ display: "flex", paddingLeft:"20px",}}>
+            <Button onClick={handleOnClick} color="primary" variant="outlined">
               SEARCH
             </Button>
           </Grid>
         </Grid>
         <Grid>
-          <Grid item xs={2} columns={1} gridColumn="2" mx="auto" my="10px">
+          <Grid style={{marginTop:"20px"}} container spacing={2} columns={16}>
             {users.map((user, i) => {
               return (
+                <Grid key={i} item xs={4}>
                 <Card key={i} sx={{ maxWidth: 375 }}>
                   <CardMedia
                     component="img"
@@ -200,6 +206,7 @@ const SearchUsers = ({ currentUser, updateUserInfo }) => {
                     </List>
                   </CardContent>
                 </Card>
+                </Grid>
               );
             })}
           </Grid>

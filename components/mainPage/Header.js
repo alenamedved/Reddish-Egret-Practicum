@@ -96,6 +96,13 @@ const Header = () => {
                   </Button>
                   <Button
                     color="inherit"
+                    href={"/userSearch"}
+                  >
+                    {" "}
+                    Search Users{" "}
+                  </Button>
+                  <Button
+                    color="inherit"
                     onClick={signOut}
                   >
                     {" "}
@@ -146,6 +153,13 @@ const Header = () => {
                   {" "}
                   Main Board {" "}
                 </Button>
+                <Button
+                    color="inherit"
+                    href={"/userSearch"}
+                  >
+                    {" "}
+                    Search Users{" "}
+                  </Button>
                 <Button
                   color="inherit"
                   onClick={signOut}
