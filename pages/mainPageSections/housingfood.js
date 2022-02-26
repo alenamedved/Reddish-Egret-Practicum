@@ -88,7 +88,7 @@ function Resources() {
             Please click on the links below to find more info
           </Typography>
         </Box>
-        <Grid container direction="column" spacing={1} mt={4}>
+        <Grid container direction="column"  mt={4}>
           <Grid item>
             <Paper>
               <Grid container padding={3} justifyContent="space-between">

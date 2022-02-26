@@ -26,7 +26,7 @@ const AddnewPost = ({ currentUser, handleClose }) => {
     <>
       <TextareaAutosize
         style={{
-          width: "90%",
+          width: "100%",
           marginLeft: "auto",
           marginRight: "auto",
           paddingTop: "5px",
@@ -34,14 +34,14 @@ const AddnewPost = ({ currentUser, handleClose }) => {
         }}
         value={input}
         placeholder="what is on your mind"
-        minRows={5}
+        minRows={10}
         row={5}
         maxRows={10}
         onChange={(e) => setInput(e.target.value)}
       />
       <Button
-        style={{ position: "absolute", right: "80%", bottom: "30%" }}
-        variant="text"
+      variant="contained"
+        style={{ position: "absolute", right: "70%", bottom: "10%", backgroundColor: "#39a52c" }}
         onClick={addNewPost}
       >
         Submit
