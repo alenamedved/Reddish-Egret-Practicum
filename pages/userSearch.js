@@ -178,6 +178,7 @@ const SearchUsers = ({ currentUser, updateUserInfo }) => {
                 <Card key={i} sx={{ maxWidth: 375 }}>
                   <CardMedia
                     component="img"
+                    style={{width:"400px",height:"300px"}}
                     image={
                       user.userImageUrl || "http://via.placeholder.com/400x300"
                     }
