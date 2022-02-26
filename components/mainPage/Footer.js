@@ -1,24 +1,27 @@
-import { Box } from "@mui/material";
+import { BottomNavigation, Box, Paper } from "@mui/material";
 import React from "react";
 
 const Footer = () => {
   return (
-    <Box
+    <Paper
       component="footer"
       sx={{
+        position: 'fixed',
         bottom: 0,
-        py: 2,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 2,
         width: "100%",
-        backgroundColor: "gray",
+        backgroundColor: "#212121",
         color: "white",
-        textAlign: "center",
+
       }}
     >
-      &copy; 2022 UTab App
-    </Box>
+      &copy; 2022 U#Welcome App
+    </Paper>
   )
 };
 
 export default Footer;
 
-// <footer> <small>&copy; 2022 UTab App</small></footer>

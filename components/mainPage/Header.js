@@ -36,7 +36,7 @@ const Header = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "#212121" }}>
+      <AppBar position="fixed" sx={{ backgroundColor: "#212121" }}>
         <Toolbar>
           <CardMedia
             component="img"
@@ -50,7 +50,6 @@ const Header = () => {
               edge="start"
               color="inherit"
               aria-label="menu"
-              sx={{ mr: 2 }}
               onClick={handleMenu}
             >
               <MenuIcon
@@ -78,6 +77,7 @@ const Header = () => {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
+            
               {!loading && authUser ? (
                 <div>
                   <Button
@@ -93,6 +93,13 @@ const Header = () => {
                   >
                     {" "}
                     Main Board{" "}
+                  </Button>
+                  <Button
+                    color="inherit"
+                    href={"/userSearch"}
+                  >
+                    {" "}
+                    Search Users{" "}
                   </Button>
                   <Button
                     color="inherit"
@@ -147,6 +154,13 @@ const Header = () => {
                   Main Board {" "}
                 </Button>
                 <Button
+                    color="inherit"
+                    href={"/userSearch"}
+                  >
+                    {" "}
+                    Search Users{" "}
+                  </Button>
+                <Button
                   color="inherit"
                   onClick={signOut}
                 >
@@ -158,6 +172,9 @@ const Header = () => {
               <Box>
                 <Button
                   color="inherit"
+                  sx={{
+                    m: 2,
+                  }}
                   href={"/"}
                 >
                   {" "}

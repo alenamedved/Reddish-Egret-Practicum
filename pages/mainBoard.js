@@ -7,8 +7,6 @@ import ProfileCard from "../components/ProfileCard";
 import CreatePost from "../components/CreatePost";
 
 import Grid from "@mui/material/Grid";
-import { Typography } from "@mui/material";
-
 function postsCollection() {
   return new Promise((resolve) => {
     db.collection("posts").onSnapshot((docs) => {
@@ -184,7 +182,7 @@ const MainBoard = () => {
         gridTemplateRows="4rem 1fr"
         gap={2}
         container
-        sx={{ padding: "20px", marginLeft: "5px" }}
+        sx={{ padding: "20px", marginLeft: "5px",mt: 10 }}
         columns={2}
       >
         <ProfileCard
@@ -213,3 +211,31 @@ const MainBoard = () => {
 };
 
 export default MainBoard;
+
+
+
+
+
+
+
+// <CreatePost currentUser={currentUser} />
+// <Grid
+//   display="grid"
+//   gridTemplateColumns="repeat(2, 1fr)"
+//   container
+//   sx={{ padding: "5px" }}
+//   columns={2}
+// >
+
+//   <ProfileCard currentUser={currentUser} updateUserInfo={updateUserInfo} />
+//   <Grid gridRow={1}>
+//     {posts.map((post) => (
+//       <Post
+//         key={post.postId}
+//         post={post}
+//         userId={authUser.uid}
+//         currentUser={currentUser}
+//       />
+//     ))}
+//   </Grid>
+// </Grid>

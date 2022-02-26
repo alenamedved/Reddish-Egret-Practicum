@@ -5,14 +5,14 @@ import { Box } from "@mui/system";
 
 function educationlanguage() {
   return (
-    <Container sx={{ backgroundColor: "#fff3e0", pb: 10, mb: 20, mt: 7 }} >
-      <Box>
+    <Container sx={{ pb: 10, mb: 0, mt: 10 }} >
+      <Box >
         <Typography variant="h4" marginTop={3}>
           Educational Resources for Immigrants, Refugees, Asylees and other New
           Americans
         </Typography>
         <Typography variant="h6" marginTop={3}>
-          Welcome to the U.S. Department of Education`&apos;`s and Language`&apos;`s page
+          Welcome to the U.S. Department of Education&apos;s and Language&apos;s page
           dedicated to providing information and resources for immigrant, refugee,
           asylee students and families
         </Typography>
@@ -22,11 +22,27 @@ function educationlanguage() {
           <Grid container padding={3} justifyContent="space-between" xs={12}>
             <Grid item  >
               <Typography sx={{ sm: { display: "none" } }}>
+                Code The Dream
+              </Typography>
+            </Grid>
+            <Grid sx={{ xs: { display: "flex", alignItems: "center", justifyContent: "center" } }}>
+              <Link href="https://codethedream.org/" target="_blank" passHref>
+                <Button>go to website</Button>
+              </Link>
+            </Grid>
+          </Grid>
+        </Paper>
+      </Grid>
+      <Grid item marginTop={3}>
+        <Paper >
+          <Grid container padding={3} justifyContent="space-between" xs={12}>
+            <Grid item  >
+              <Typography sx={{ sm: { display: "none" } }}>
                 Educational Resources
               </Typography>
             </Grid>
             <Grid sx={{ xs: { display: "flex", alignItems: "center", justifyContent: "center" } }}>
-              <Link href="https://www2.ed.gov/about/overview/focus/immigration-resources.html" target="_blank">
+              <Link href="https://www2.ed.gov/about/overview/focus/immigration-resources.html" target="_blank" passHref>
                 <Button>go to website</Button>
               </Link>
             </Grid>
@@ -43,7 +59,7 @@ function educationlanguage() {
               </Typography>
             </Grid>
             <Grid sx={{ xs: { display: "flex", alignItems: "center", justifyContent: "center" } }}>
-              <Link href="https://www.immigrant-education.ca/" target="_blank">
+              <Link href="https://www.immigrant-education.ca/" target="_blank" passHref>
                 <Button>go to website</Button>
               </Link>
             </Grid>
@@ -59,7 +75,7 @@ function educationlanguage() {
               </Typography>
             </Grid>
             <Grid sx={{ xs: { display: "flex", alignItems: "center", justifyContent: "center" } }}>
-              <Link href="https://www.apa.org/members/content/immigrant-students-resources" target="_blank">
+              <Link href="https://www.apa.org/members/content/immigrant-students-resources" target="_blank" passHref>
                 <Button>go to website</Button>
               </Link>
             </Grid>
@@ -75,7 +91,7 @@ function educationlanguage() {
               </Typography>
             </Grid>
             <Grid sx={{ xs: { display: "flex", alignItems: "center", justifyContent: "center" } }}>
-              <Link href="https://www.ilctr.org/programs/" target="_blank">
+              <Link href="https://www.ilctr.org/programs/" target="_blank" passHref>
                 <Button>go to website</Button>
               </Link>
             </Grid>
@@ -91,7 +107,7 @@ function educationlanguage() {
               </Typography>
             </Grid>
             <Grid sx={{ xs: { display: "flex", alignItems: "center", justifyContent: "center" } }}>
-              <Link href="https://www.kaplaninternational.com/united-states" target="_blank">
+              <Link href="https://www.kaplaninternational.com/united-states" target="_blank" passHref>
                 <Button>go to website</Button>
               </Link>
             </Grid>
@@ -108,17 +124,17 @@ function educationlanguage() {
           <Grid container padding={3} justifyContent="space-between" xs={12}>
             <Grid item  >
               <Typography sx={{ sm: { display: "none" } }}>
-              Education For Immigrant
+                Education For Immigrant
               </Typography>
             </Grid>
             <Grid sx={{ xs: { display: "flex", alignItems: "center", justifyContent: "center" } }}>
-              <Link href="https://www2.ed.gov" target="_blank">
+              <Link href="https://www2.ed.gov" target="_blank" passHref>
                 <Button>go to website</Button>
               </Link>
             </Grid>
           </Grid>
         </Paper>
-      </Grid>   
+      </Grid>
     </Container>
   );
 }

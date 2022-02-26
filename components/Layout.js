@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "./mainPage/Header";
 import Footer from "./mainPage/Footer";
 
-export const siteTitle = "UTab app";
+export const siteTitle = "U#Welcome";
 
 export default function Layout({ children }) {
   return (
