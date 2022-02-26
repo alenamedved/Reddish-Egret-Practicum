@@ -57,7 +57,7 @@ export default function AddNeWComment({ postId, currentUser }) {
         onClick={() => saveComment(postId)}
         endIcon={<SendIcon />}
       >
-        Send
+        Comment
       </Button>
     </Stack>
   );

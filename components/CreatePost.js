@@ -59,7 +59,8 @@ const CreatePost = ({ currentUser }) => {
             <AddnewPost currentUser={currentUser} handleClose={handleClose} />
           </Typography>
           <Button
-            style={{ position: "absolute", left: "80%", bottom: "30%" }}
+            variant="contained"
+            style={{ position: "absolute", left: "72%", bottom: "10%", backgroundColor: "#ff6b6b" }}
             onClick={handleClose}
           >
             close
