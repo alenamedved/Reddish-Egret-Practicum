@@ -1,6 +1,5 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { fontWeight, height, positions } from "@mui/system";
 
 import React from "react";
 
