@@ -111,11 +111,27 @@ const SearchUsers = ({ currentUser, updateUserInfo }) => {
               )}.png`;
               items.push(userData);
             });
+
+            fire
+          .firestore()
+          .collection("users")
+          .where("language", ">=", value)
+          .where("language", "<", value + "z")
+          .get()
+          .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              let userData = doc.data();
+              userData.countryFlag = `https://flagcdn.com/16x12/${getCountryCode(
+                userData.country
+              )}.png`;
+              items.push(userData);
+            });
             
             setUsers([...new Set(items)]);
 
             console.log(items);
           });
+        });
         });
       });
   }
