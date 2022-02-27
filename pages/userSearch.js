@@ -26,7 +26,7 @@ const SearchUsers = () => {
     return code || "";
   };
   // To delete the selected image file
-  function handleOnClick(e) {
+  function handleOnClick() {
     const items = [];
     db.collection("users")
 
