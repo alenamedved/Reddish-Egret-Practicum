@@ -81,7 +81,6 @@ function updateDataInDb(docs, collection, dataToUpdate) {
   });
 }
 
-
 const MainBoard = () => {
   const [posts, setPosts] = useState([]);
   const [filterByName, setFilterByName] = useState({
@@ -101,12 +100,8 @@ const MainBoard = () => {
 
   const { authUser, loading } = useAuth();
 
-
-
-
   // Listen for changes on loading and authUser
   useEffect(() => {
-
     if (authUser) {
       //fetch all posts and subscribe for updates
       db.collection("posts").onSnapshot((docs) => {
@@ -182,7 +177,7 @@ const MainBoard = () => {
         gridTemplateRows="4rem 1fr"
         gap={2}
         container
-        sx={{ padding: "20px", marginLeft: "5px",mt: 10 }}
+        sx={{ padding: "20px", marginLeft: "5px", mt: 10 }}
         columns={2}
       >
         <ProfileCard
@@ -211,12 +206,6 @@ const MainBoard = () => {
 };
 
 export default MainBoard;
-
-
-
-
-
-
 
 // <CreatePost currentUser={currentUser} />
 // <Grid
