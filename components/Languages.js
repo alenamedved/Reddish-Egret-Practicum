@@ -8,6 +8,7 @@ const Languages = [
     {"value":"Armenian","code":"HY"},
     {"value":"Basque","code":"EU"},
     {"value":"Bengali","code":"BN"},
+    {"value":"Belarusian","code":"BY"},
     {"value":"Bulgarian","code":"BG"},
     {"value":"Catalan","code":"CA"},
     {"value":"Cambodian","code":"KM"},
