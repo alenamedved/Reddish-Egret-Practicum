@@ -11,7 +11,7 @@ const Footer = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        padding: 2,
+        padding: 1,
         width: "100%",
         backgroundColor: "#212121",
         color: "white",

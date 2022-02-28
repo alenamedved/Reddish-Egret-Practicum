@@ -193,7 +193,7 @@ const MainBoard = () => {
         <CreatePost currentUser={currentUser} />
 
         {authUser && posts ? (
-          <Grid gridRow={2}>
+          <Grid gridRow={2} sx={{mb: '12px'}}>
             {posts.map((post) => (
               <Post
                 key={post.postId}
