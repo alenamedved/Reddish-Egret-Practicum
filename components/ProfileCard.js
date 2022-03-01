@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import List from '@mui/material/List';
+import List from "@mui/material/List";
 import fire from "../config/fire-config";
 import { storage } from "../config/fire-config";
 import { CountryDropdown } from "react-country-region-selector";
@@ -27,11 +27,19 @@ import CustomizedDialogs from "./dialog";
 import ProfilePage from "./profilepage";
 
 function ProfileCard({ currentUser, updateUserInfo }) {
-
-  const { country, hobbies, language, location, userImageUrl, userName } = currentUser;
+  const { country, hobbies, language, location, userImageUrl, userName } =
+    currentUser;
 
   return (
-    <Grid item xs={2} columns={1} gridColumn="2" gridRow={2} mx="auto" my="10px" >
+    <Grid
+      item
+      xs={2}
+      columns={1}
+      gridColumn="2"
+      gridRow={2}
+      mx="auto"
+      my="10px"
+    >
       <Card sx={{ maxWidth: 375 }}>
         <CustomizedDialogs>
           <ProfilePage
@@ -39,16 +47,46 @@ function ProfileCard({ currentUser, updateUserInfo }) {
             updateUserInfo={updateUserInfo}
           />
         </CustomizedDialogs>
-        <CardMedia component="img" style={{width:"400px",height:"300px"}} image={userImageUrl || "https://via.placeholder.com/400x300" } alt="avatar" />
-        <CardContent sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-          <Typography gutterBottom><strong>{userName}</strong></Typography>
-          <Typography gutterBottom>Speaks <strong>{language}</strong></Typography>
-          <Typography gutterBottom>Located at <strong>{location}</strong></Typography>
-          <Typography gutterBottom>Originaly from <strong>{country}</strong></Typography>
-          <Typography variant="subtitle2" >Interested in: </Typography>
-          <List sx={{ display: "flex", fontStyle: "italic", paddingTop: "0px"}} >
+        <CardMedia
+          component="img"
+          sx={{
+            width: "400px",
+            height: "300px",
+            display: { xs: "none", sm: "block" },
+          }}
+          image={userImageUrl || "https://via.placeholder.com/400x300"}
+          alt="avatar"
+        />
+        <CardContent
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Typography gutterBottom>
+            <strong>{userName}</strong>
+          </Typography>
+          <Typography gutterBottom>
+            Speaks <strong>{language}</strong>
+          </Typography>
+          <Typography gutterBottom>
+            Located at <strong>{location}</strong>
+          </Typography>
+          <Typography gutterBottom>
+            Originaly from <strong>{country}</strong>
+          </Typography>
+          <Typography variant="subtitle2">Interested in: </Typography>
+          <List
+            sx={{ display: "flex", fontStyle: "italic", paddingTop: "0px" }}
+          >
             {hobbies.map((hobby, index) => {
-              return <ListItemText sx={{margin: "4px"}} key={index}> {hobby} </ListItemText>;
+              return (
+                <ListItemText sx={{ margin: "4px" }} key={index}>
+                  {" "}
+                  {hobby}{" "}
+                </ListItemText>
+              );
             })}
           </List>
         </CardContent>
