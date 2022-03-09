@@ -13,7 +13,7 @@ export default function Layout({ children }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           property="og:image"
-          content="https://https://reddish-egret-practicum-pink.vercel.app/images/images/U#Welcome-img.png"/>
+          content="https://reddish-egret-practicum-pink.vercel.app/images/images/U#Welcome-img.png"/>
         <meta name="og:title" content={siteTitle} />
         <title>{siteTitle}</title>
       </Head>
